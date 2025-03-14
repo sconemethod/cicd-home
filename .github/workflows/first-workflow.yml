@@ -26,3 +26,4 @@ jobs:
         run: Write-Output "Windows String"
       - name: Error Step
         run: exit 1  # 오류 테스트용 (원래는 정상적인 명령어를 사용해야 함)
+        continue-on-error: true #GitHub Actions에서는 continue-on-error: true를 추가하면 실패해도 계속 실행돼!
