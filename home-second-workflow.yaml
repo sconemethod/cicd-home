@@ -1,0 +1,39 @@
+name: home-second-workflow
+
+on: 
+  push:
+  pull_request:
+
+jobs:
+  multi-shell-task:
+    runs-on: windows-latest
+    steps:
+      - name: Bash - Print system Info
+        shell : bash
+        run: uname -a
+
+      - name: PowerShell - Get system Info
+        shell: pwsh
+        run: Get-ComputerInfo
+      
+      - name: Python - Print system Info
+        shell: python
+        run: python -c "import sys; print(sys.version)"
+
+      
+      - name: Node  - Print system Info
+        shell: node
+        run: node -e "console.log(process.version)"
+
+directory-task:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Create test_foler
+      run: mkdir -p /home/runner/test_folder
+
+    - name: Create sample.txt in test_folder
+      run: echo "Hello, this is a test file." > /home/runner/test_folder/sample.txt
+    
+    - name: Change directory and check file contents
+        working-directory: /home/runner/test_folder #추가설정
+        run: cat sample.txt
