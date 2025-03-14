@@ -35,5 +35,5 @@ directory-task:
       run: echo "Hello, this is a test file." > /home/runner/test_folder/sample.txt
     
     - name: Change directory and check file contents
-        working-directory: /home/runner/test_folder #추가설정
-        run: cat sample.txt
+      working-directory: /home/runner/test_folder #추가설정
+      run: cat sample.txt
