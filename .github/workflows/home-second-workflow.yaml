@@ -25,15 +25,15 @@ jobs:
         shell: node
         run: node -e "console.log(process.version)"
 
-directory-task:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Create test_foler
-      run: mkdir -p /home/runner/test_folder
+  directory-task:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create test_foler
+        run: mkdir -p /home/runner/test_folder
 
-    - name: Create sample.txt in test_folder
-      run: echo "Hello, this is a test file." > /home/runner/test_folder/sample.txt
-    
-    - name: Change directory and check file contents
-      working-directory: /home/runner/test_folder #추가설정
-      run: cat sample.txt
+      - name: Create sample.txt in test_folder
+        run: echo "Hello, this is a test file." > /home/runner/test_folder/sample.txt
+      
+      - name: Change directory and check file contents
+        working-directory: /home/runner/test_folder #추가설정
+        run: cat sample.txt
