@@ -1,0 +1,17 @@
+name: home-first-workflow
+
+on:
+  push:
+  pull_request:
+  
+jobs:
+  check-python:
+    runs-on:ubuntu-latest
+    steps:
+      - name: Check Repository
+        uses: action/checkout@v4
+
+      - name: Show Python and pip version
+        run: |
+          python --version
+          pip --version
