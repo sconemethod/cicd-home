@@ -25,7 +25,7 @@ jobs:
 
       
       - name: Node  - Print system Info
-        shell: node
+        # shell: node 지원되지 않음 
         run: node -e "console.log(process.version)"
 
   directory-task:
