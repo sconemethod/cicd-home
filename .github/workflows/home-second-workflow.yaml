@@ -21,7 +21,7 @@ jobs:
         # run : python -c "import sys; print(sys.version)" 이 코드에서 python -c는 쉘에서 실행하는 명령어인데, 이미 shell: python을 지정했기 때문에 python -c를 붙일 필요가 없음!
         run: |
           import sys
-          print(sys.verion)
+          print(sys.version)
 
       
       - name: Node  - Print system Info
